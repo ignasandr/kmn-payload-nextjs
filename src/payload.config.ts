@@ -5,7 +5,7 @@ import Users from './collections/Users';
 import Navbar from './globals/Navbar';
 
 export default buildConfig({
-  serverURL: 'http://localhost:3001',
+  serverURL: 'http://localhost:3000',
   admin: {
     user: Users.slug,
   },
