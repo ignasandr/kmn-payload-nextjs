@@ -40,10 +40,10 @@ const Layout = ({ children, title = "Kauno Menininkų Namai"}: Props ) => {
                 <meta property="og:title" content={title} key="title" />
             </Head>
             <Header />
+            <Navbar />
             <Container>
                 <Content>{children}</Content>
             </Container>
-            <Navbar />
         </React.Fragment>
     )
 }
