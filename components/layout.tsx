@@ -1,8 +1,9 @@
 import Head from "next/head";
-import React, { ReactNode, useEffect, useState } from "react";
+import React, { ReactNode } from "react";
 import styled from 'styled-components';
-import Navbar from "./navbar";
+import LeftNav from "./leftnav";
 import Header from "./header";
+import Navigation from "./navigation";
 
 type Props = {
     children?: ReactNode,
@@ -12,11 +13,21 @@ type Props = {
 const Container = styled.div`
     margin-left: 20vw;
     margin-right: 30px;
+
+    @media (max-width: 980px) {
+       margin-left: 10vw; 
+       margin-right: 10vw;
+    }
 `
 
 const Content = styled.div`
-    margin-top: 47.85px;
+    /* margin-top: 47.85px; */
     margin-right: 18vw;
+
+    @media (max-width: 980px) {
+       margin-top: 0; 
+       margin-right: 0;
+    }
 `
 
 export default function Layout ({ children, title = "Kauno Menininkų Namai"}: Props ) {
@@ -26,8 +37,7 @@ export default function Layout ({ children, title = "Kauno Menininkų Namai"}: P
                 <link rel="icon" href="/favicon.ico" />
                 <meta property="og:title" content={title} key="title" />
             </Head>
-            <Header />
-            <Navbar />
+            <Navigation />
             <Container>
                 <Content>{children}</Content>
             </Container>

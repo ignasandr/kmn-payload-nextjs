@@ -16,7 +16,7 @@ const StyledSubcategories = styled.div<{ open: boolean, h: number }>`
     background: white;
     max-height: ${props => (props.open ? props.h + "px" : "0px")};
     opacity: ${props => (props.open ? "1" : "0")};
-    transition: max-height 0.6s ease-in-out, opacity 0.6s ease;
+    transition: max-height 0.6s ease-in-out, opacity 0.4s ease;
     overflow: hidden;
 
 `
@@ -28,7 +28,7 @@ const StyledSubcatagoriesMargin = styled.div`
     align-content: flex-start;
     justify-content: flex-end;
     text-align: right;
-    margin: 10px 0;
+    margin: 5px 0;
 `
 
 
@@ -38,7 +38,7 @@ export default function NavSubcategories ({ open, subcategories }: NavSubcategor
 
     const router = useRouter();
     const queryString = router.query.toString();
-    let height = subcategories.length * 60;
+    let height = subcategories.length * 40;
 
 
     return (

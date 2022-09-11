@@ -10,14 +10,14 @@ type NavLinkSubcategoryProps = {
 
 const StyledNavLinkSubcategory = styled.div<{ selected: boolean }>`
     font-family: ${props => props.theme.fonts.base};
-    padding: 0 20px 11px 0;
+    padding: 0 20px 6px 0;
     cursor: pointer;
     font-weight: 400;
     text-decoration: none;
     color: ${(props) => {
                 return props.selected ? props.theme.colors.orange : props.theme.colors.base
             }};
-    font-size: 20px;
+    font-size: 18px;
     &:hover {
         opacity: 0.7;
     };

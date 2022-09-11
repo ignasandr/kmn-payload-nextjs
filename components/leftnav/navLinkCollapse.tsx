@@ -3,10 +3,10 @@ import styled from "styled-components"
 
 type navLinkCollapseProps = {
     children?: ReactNode,
-    onClick: React.MouseEventHandler<HTMLDivElement>
+    onClick: React.MouseEventHandler<HTMLLIElement>
 }
 
-const StyledNavLinkCollapse = styled.div<{onClick: React.MouseEventHandler<HTMLDivElement>}>`
+const StyledNavLinkCollapse = styled.li<{onClick: React.MouseEventHandler<HTMLLIElement>}>`
     position: relative;
     font-family: ${props => props.theme.fonts.base};
     padding: 0 20px 11px 0;
@@ -32,9 +32,7 @@ const StyledNavLinkCollapse = styled.div<{onClick: React.MouseEventHandler<HTMLD
 
 export default function NavLinkCollapse ({ children, onClick }: navLinkCollapseProps) {
     return (
-        <StyledNavLinkCollapse
-            onClick={onClick} 
-        >
+        <StyledNavLinkCollapse onClick={onClick}>
             {children}
         </StyledNavLinkCollapse>
     )

@@ -22,18 +22,19 @@ export const StyledNavText = styled.div<{ selected: boolean }>`
         opacity: 0.7;
     };
     transition: opacity 0.4s linear;
+    user-select: none;
 `
 
 
 // components
 export default function NavLink ({children, to, selected}: NavLinkProps) {
     return (
-        <Link href={to}>
-            <StyledNavText
-                selected={selected} 
-            >
-                {children}
-            </StyledNavText>
-        </Link>
+        <li>
+            <Link href={to}>
+                <StyledNavText selected={selected}>
+                        {children}
+                </StyledNavText>
+            </Link>
+        </li>
     )
 }

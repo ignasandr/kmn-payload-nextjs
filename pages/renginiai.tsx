@@ -1,17 +1,11 @@
-import styled from "styled-components";
 import Layout from "../components/layout";
+import PageTitle from "../components/page/pageTitle";
 
-const StyledTestTitle = styled.h1`
-  font-family: ${props => props.theme.fonts.title};
-  color: ${props => props.theme.colors.orange};
-  font-weight: 400;
-`
-
-export default function Renginiai({ data }) {
+export default function Renginiai() {
 
   return (
       <Layout>
-        <StyledTestTitle>Renginiai</StyledTestTitle>
+        <PageTitle>Renginiai</PageTitle>
       </Layout>
   )
 }
