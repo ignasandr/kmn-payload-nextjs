@@ -27,9 +27,14 @@
     font-family: "Nexa";
     src: url("../assets/Nexa/Nexa-Light.woff"),
     url("../assets/Nexa/Nexa-Light.woff2");
-    font-weight: 400;
+    font-weight: 300;
 }
 
+@font-face {
+    font-family: "Nexa";
+    src: url("../assets/Nexa/Nexa-Regular.woff");
+    font-weight: 400;
+}
 
 @font-face {
     font-family: "Nexa";

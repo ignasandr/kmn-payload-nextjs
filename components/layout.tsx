@@ -19,20 +19,7 @@ const Content = styled.div`
     margin-right: 18vw;
 `
 
-const Layout = ({ children, title = "Kauno Menininkų Namai"}: Props ) => {
-    // const [navItems, setNavItems] = useState([]);
-
-    // useEffect(() => {
-    //     const fetchData = async () => {
-    //         const data = await fetch("http://localhost:3000/api/globals/navbar")
-    //         .then(response => response.json())
-    //         .then(data => setNavItems(data.navItems))
-    //         .catch(console.error);
-    //     }
-
-    //     fetchData();
-    // })
-
+export default function Layout ({ children, title = "Kauno Menininkų Namai"}: Props ) {
     return (
         <React.Fragment>
             <Head>
@@ -47,5 +34,3 @@ const Layout = ({ children, title = "Kauno Menininkų Namai"}: Props ) => {
         </React.Fragment>
     )
 }
-
-export default Layout

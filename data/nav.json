@@ -1,0 +1,187 @@
+{
+  "navItems": [
+    {
+      "type": "link",
+      "label": "Naujienos",
+      "slug": "/naujienos",
+      "subcategories": [],
+      "id": "62e22de71815f04a104dc76b"
+    },
+    {
+      "type": "link",
+      "label": "Renginiai",
+      "slug": "/renginiai",
+      "subcategories": [],
+      "id": "62e23a2d2e42372d99e851eb"
+    },
+    {
+      "type": "link",
+      "label": "Kultūros infocentras",
+      "slug": "/infocentras",
+      "subcategories": [],
+      "id": "62e23a3c2e42372d99e851ec"
+    },
+    {
+      "type": "link",
+      "label": "Skaitykla",
+      "slug": "/skaitykla",
+      "subcategories": [],
+      "id": "62e23a882e42372d99e851ed"
+    },
+    {
+      "type": "collapse",
+      "label": "Rezidencijos",
+      "slug": "/rezidencijos",
+      "subcategories": [
+        {
+          "label": "Unlearning Eastern Europe",
+          "slug": "/unlearning-eastern-europe",
+          "id": "62e233e88e14da86ca6b6c0c"
+        },
+        {
+          "label": "DeMo",
+          "slug": "/demo",
+          "id": "62e234348e14da86ca6b6c0d"
+        },
+        {
+          "label": "Svečiai",
+          "slug": "/sveciai",
+          "id": "62e234478e14da86ca6b6c0e"
+        },
+        {
+          "label": "2018 m. rezidencijos",
+          "slug": "/2018-m-rezidencijos",
+          "id": "62e234688e14da86ca6b6c0f"
+        }
+      ],
+      "id": "62e233da8e14da86ca6b6c0b"
+    },
+    {
+      "type": "link",
+      "label": "Edukacija",
+      "slug": "/edukacija",
+      "subcategories": [],
+      "id": "62e23ac22e42372d99e851ee"
+    },
+    {
+      "type": "link",
+      "label": "Matters",
+      "slug": "/matters",
+      "subcategories": [],
+      "id": "62e23acc2e42372d99e851ef"
+    },
+    {
+      "type": "link",
+      "label": "Bendrakūryba",
+      "slug": "/bendrakuryba",
+      "subcategories": [],
+      "id": "62e23ad32e42372d99e851f0"
+    },
+    {
+      "type": "collapse",
+      "label": "Mediateka",
+      "slug": "/mediateka",
+      "subcategories": [
+        {
+          "label": "Video",
+          "slug": "/video",
+          "id": "62e23aec2e42372d99e851f2"
+        },
+        {
+          "label": "Audio",
+          "slug": "/audio",
+          "id": "62e23af22e42372d99e851f3"
+        },
+        {
+          "label": "Foto",
+          "slug": "/foto",
+          "id": "62e23afa2e42372d99e851f4"
+        }
+      ],
+      "id": "62e23ade2e42372d99e851f1"
+    },
+    {
+      "type": "link",
+      "label": "Paslaugos",
+      "slug": "/paslaugos",
+      "subcategories": [],
+      "id": "62e23b772e42372d99e851f5"
+    },
+    {
+      "type": "collapse",
+      "label": "Informacija",
+      "slug": "/informacija",
+      "subcategories": [
+        {
+          "label": "Kas mes esame",
+          "slug": "/mes",
+          "id": "62e23b902e42372d99e851f7"
+        },
+        {
+          "label": "Istorija",
+          "slug": "/istorija",
+          "id": "62e23b992e42372d99e851f8"
+        },
+        {
+          "label": "Nuostatai",
+          "slug": "/nuostatai",
+          "id": "62e23ba22e42372d99e851f9"
+        },
+        {
+          "label": "Struktūra",
+          "slug": "/struktura",
+          "id": "62e23bac2e42372d99e851fa"
+        },
+        {
+          "label": "Darbo užmokestis",
+          "slug": "/uzmokestis",
+          "id": "62e23bb42e42372d99e851fb"
+        },
+        {
+          "label": "Ataskaitos",
+          "slug": "/ataskaitos",
+          "id": "62e23bbe2e42372d99e851fc"
+        },
+        {
+          "label": "Viešieji pirkimai",
+          "slug": "/pirkimai",
+          "id": "62e23bcd2e42372d99e851fd"
+        },
+        {
+          "label": "Tarnybinis automobilis",
+          "slug": "/automobilis",
+          "id": "62e23bd62e42372d99e851fe"
+        },
+        {
+          "label": "Korupcijos prevencija",
+          "slug": "/korupcija",
+          "id": "62e23bdf2e42372d99e851ff"
+        },
+        {
+          "label": "Informacija apie komisijas ir darbo grupes",
+          "slug": "/komisijos",
+          "id": "62e23be92e42372d99e85200"
+        }
+      ],
+      "id": "62e23b872e42372d99e851f6"
+    },
+    {
+      "type": "link",
+      "label": "Naujienlaiškis",
+      "slug": "/naujienlaiskis",
+      "subcategories": [],
+      "id": "62e23cf52e42372d99e85201"
+    },
+    {
+      "type": "link",
+      "label": "Kontaktai",
+      "slug": "/kontaktai",
+      "subcategories": [],
+      "id": "62e23cfe2e42372d99e85202"
+    }
+  ],
+  "globalType": "navbar",
+  "createdAt": "2022-07-28T06:14:05.097Z",
+  "updatedAt": "2022-08-01T05:36:09.021Z",
+  "id": "62e2292d6bf469149ac5d77c"
+}
