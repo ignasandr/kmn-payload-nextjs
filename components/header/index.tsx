@@ -8,6 +8,11 @@ const StyledHeader = styled.nav`
     top: 0;
     left: 0;
     z-index: 1;
+
+
+   @media (max-width: 980px) {
+      display: none;
+   }
 `
 
 const StyledHeaderContents = styled.div`

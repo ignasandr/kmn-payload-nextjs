@@ -22,8 +22,8 @@ export default function Home() {
         <meta name="description" content="Pagrindinis puslapis" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <StyledTestTitle>Žaibiškas</StyledTestTitle>
-      <StyledTestText>Žaibiškas</StyledTestText>
+      <StyledTestTitle>Hello</StyledTestTitle>
+      <StyledTestText>World</StyledTestText>
       {/* <Examples /> */}
       {/* <FilmList /> */}
     </Layout>

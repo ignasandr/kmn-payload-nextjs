@@ -21,7 +21,8 @@ const Container = styled.div`
 `
 
 const Content = styled.div`
-    /* margin-top: 47.85px; */
+    font-family: ${props => props.theme.fonts.base};
+    margin-top: 47.85px;
     margin-right: 18vw;
 
     @media (max-width: 980px) {

@@ -6,21 +6,6 @@ import NavLinkCollapse from "./navLinkCollapse";
 import NavSubcategories from "./navSubcategories";
 import data from "../../data/nav.json"
 
-const StyledLeftNavContainer = styled.div`
-    position: fixed;
-    top: 113px;
-    padding-top: 44px;
-`
-
-const StyledLeftNav = styled.nav`
-    display: flex;
-    width: 18.7vw;
-    flex-direction: column;
-    align-items: flex-end;
-    align-content: flex-start;
-    justify-content: flex-end;
-    text-align: right;
-`
 
 const StyledUl = styled.ul`
   list-style-type: none;
@@ -48,37 +33,33 @@ export default function LeftNav() {
     }
 
     return (
-        <StyledLeftNavContainer>
-            <StyledLeftNav>
-                <StyledUl>
-                        { navItems.map((item, index) => {
-                            if (item.type === 'collapse') {
-                            return (
-                                    <StyledCollapseContainer key={index}>
-                                        <NavLinkCollapse onClick={() => handleSub(index)}>
-                                            {item.label}
-                                        </NavLinkCollapse>
-                                        <NavSubcategories
-                                            subcategories={item.subcategories} 
-                                            open={open === index ? true : false}
-                                        />
-                                    </StyledCollapseContainer>
-                            ) 
-                            } else {
-                            return (
-                                <NavLink
-                                    key={index}
-                                    to={item.slug}
-                                    selected={ item.slug === path ? true : false }
-                                >
+        <StyledUl>
+                { navItems.map((item, index) => {
+                    if (item.type === 'collapse') {
+                    return (
+                            <StyledCollapseContainer key={index}>
+                                <NavLinkCollapse onClick={() => handleSub(index)}>
                                     {item.label}
-                                </NavLink>
-                            ) 
-                            }
-                        })
-                        }
-                </StyledUl>
-            </StyledLeftNav>
-        </StyledLeftNavContainer>
+                                </NavLinkCollapse>
+                                <NavSubcategories
+                                    subcategories={item.subcategories} 
+                                    open={open === index ? true : false}
+                                />
+                            </StyledCollapseContainer>
+                    ) 
+                    } else {
+                    return (
+                        <NavLink
+                            key={index}
+                            to={item.slug}
+                            selected={ item.slug === path ? true : false }
+                        >
+                            {item.label}
+                        </NavLink>
+                    ) 
+                    }
+                })
+                }
+        </StyledUl>
     )
 }
