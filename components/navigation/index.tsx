@@ -1,4 +1,4 @@
-import { MouseEventHandler, useState } from "react";
+import { useState } from "react";
 import styled from "styled-components";
 import Header from "../header";
 import LeftNav from "../leftnav";
@@ -73,17 +73,19 @@ export default function Navigation() {
     const [openBurger, setOpenBurger] = useState(false);
 
     return (
-        <StyledNavigation>
-            <StyledNavLogoContainer>
-                <NavLogo />
-            </StyledNavLogoContainer>
-            <StyledBurgerContainer>
-                <Burger open={openBurger} onClick={() => setOpenBurger(!openBurger)}/>
-            </StyledBurgerContainer>
+        <>
+            <StyledNavigation>
+                <StyledNavLogoContainer>
+                    <NavLogo />
+                </StyledNavLogoContainer>
+                <StyledBurgerContainer>
+                    <Burger open={openBurger} onClick={() => setOpenBurger(!openBurger)}/>
+                </StyledBurgerContainer>
+                <StyledLeftNavContainer>
+                    <LeftNav />
+                </StyledLeftNavContainer>
+            </StyledNavigation>
             <Header />
-            <StyledLeftNavContainer>
-                <LeftNav />
-            </StyledLeftNavContainer>
-        </StyledNavigation>
+        </>
     )
 }

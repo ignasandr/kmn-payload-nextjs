@@ -9,7 +9,6 @@ const StyledHeader = styled.nav`
     left: 0;
     z-index: 1;
 
-
    @media (max-width: 980px) {
       display: none;
    }
