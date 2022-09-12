@@ -4,8 +4,20 @@ import { useState } from "react";
 import NavLink from "./navLink";
 import NavLinkCollapse from "./navLinkCollapse";
 import NavSubcategories from "./navSubcategories";
-import data from "../../data/nav.json"
 
+type LeftNavProps = {
+    navItems: {
+        type: string;
+        label: string;
+        slug: string;
+        subcategories: {
+            label: string;
+            slug: string;
+            id: string;
+        }[];
+        id: string;
+    }[]
+}
 
 const StyledUl = styled.ul`
   list-style-type: none;
@@ -17,9 +29,7 @@ const StyledCollapseContainer = styled.div`
 
 `
 
-export default function LeftNav() {
-    const navItems = data.navItems;
-
+export default function LeftNav({navItems}: LeftNavProps) {
     const [open, setOpen] = useState(null);
     const router = useRouter();
     const path = router.pathname;

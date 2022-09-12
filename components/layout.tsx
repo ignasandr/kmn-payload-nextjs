@@ -1,8 +1,8 @@
 import Head from "next/head";
 import React, { ReactNode } from "react";
 import styled from 'styled-components';
-import LeftNav from "./leftnav";
-import Header from "./header";
+import LeftNav from "./navigation/leftnav";
+import Header from "./navigation/header";
 import Navigation from "./navigation";
 
 type Props = {

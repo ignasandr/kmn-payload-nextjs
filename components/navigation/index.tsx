@@ -1,9 +1,10 @@
 import { useState } from "react";
 import styled from "styled-components";
-import Header from "../header";
-import LeftNav from "../leftnav";
+import Header from "./header";
+import LeftNav from "./leftnav";
 import Burger from "./burger";
 import NavLogo from "./navLogo";
+import data from "../../data/nav.json"
 
 const StyledNavigation = styled.div`
     position: fixed;
@@ -73,19 +74,17 @@ export default function Navigation() {
     const [openBurger, setOpenBurger] = useState(false);
 
     return (
-        <>
-            <StyledNavigation>
-                <StyledNavLogoContainer>
-                    <NavLogo />
-                </StyledNavLogoContainer>
-                <StyledBurgerContainer>
-                    <Burger open={openBurger} onClick={() => setOpenBurger(!openBurger)}/>
-                </StyledBurgerContainer>
-                <StyledLeftNavContainer>
-                    <LeftNav />
-                </StyledLeftNavContainer>
-            </StyledNavigation>
+        <StyledNavigation>
+            <StyledNavLogoContainer>
+                <NavLogo />
+            </StyledNavLogoContainer>
+            <StyledBurgerContainer>
+                <Burger open={openBurger} onClick={() => setOpenBurger(!openBurger)}/>
+            </StyledBurgerContainer>
+            <StyledLeftNavContainer>
+                <LeftNav navItems={data.navItems} />
+            </StyledLeftNavContainer>
             <Header />
-        </>
+        </StyledNavigation>
     )
 }
