@@ -4,15 +4,16 @@ import Header from "./header";
 import LeftNav from "./leftnav";
 import Burger from "./burger";
 import NavLogo from "./navLogo";
-import data from "../../data/nav.json"
+import nav from "../../data/nav.json"
 
 const StyledNavigation = styled.div`
     position: fixed;
-    height: 100%;
+    height: 95%;
     display: flex;
     flex-direction: column;
     align-items: flex-end;
     overflow-y: scroll;
+
 
     &::-webkit-scrollbar {
         display: none;
@@ -82,7 +83,7 @@ export default function Navigation() {
                 <Burger open={openBurger} onClick={() => setOpenBurger(!openBurger)}/>
             </StyledBurgerContainer>
             <StyledLeftNavContainer>
-                <LeftNav navItems={data.navItems} />
+                <LeftNav navItems={nav.navItems} />
             </StyledLeftNavContainer>
             <Header />
         </StyledNavigation>

@@ -3,6 +3,7 @@ import path from 'path';
 import Examples from './collections/Examples';
 import Users from './collections/Users';
 import Navbar from './globals/Navbar';
+import Header from './globals/Header';
 
 export default buildConfig({
   serverURL: 'http://localhost:3000',
@@ -16,6 +17,7 @@ export default buildConfig({
   ],
   globals: [
     Navbar,
+    Header
   ],
   typescript: {
     outputFile: path.resolve(__dirname, 'payload-types.ts'),
