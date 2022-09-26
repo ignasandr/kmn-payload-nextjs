@@ -3,6 +3,21 @@ import HeaderItem from "./headerItem";
 import Link from "next/link";
 import Image from "next/image";
 
+
+type HeaderProps = {
+    headerItems: {
+        linkType: string;
+        url?: string;
+        slug?: string;
+        labelType: string;
+        label?: string;
+        iconUrl?: string;
+        width?: number;
+        height?: number;
+        id: string;
+    }[]
+}
+
 const StyledHeader = styled.nav`
     position: fixed;
     top: 0;
@@ -26,52 +41,44 @@ const StyledHeaderContents = styled.div`
 
 `
 
-export default function Header() {
+export default function Header({headerItems}: HeaderProps) {
     return (
         <StyledHeader>
             <StyledHeaderContents>
-                <HeaderItem>
-                   <Link href="/en">EN</Link>
-                </HeaderItem>
-
-                <HeaderItem>
-                   <Link href="/neigaliesiems">
-                     <a>
-                        <Image src="/svg/neigaliesiems.svg" width={19.93} height={20}/>
-                     </a>
-                   </Link>
-                </HeaderItem>
-
-                <HeaderItem>
-                   <Link href="/svetaines-medis">
-                     <a>
-                        <Image src="/svg/sitemap.svg" width={28.71} height={20}/>
-                     </a>
-                   </Link>
-                </HeaderItem>
-
-                <HeaderItem>
-                   <a href="https://www.youtube.com/watch?v=mXyuVerlXCw">
-                        <Image src="/svg/gestu_kalba.svg" width={17} height={20}/>
-                   </a>
-                </HeaderItem>
-
-                <HeaderItem>
-                   <a href="https://kaunaspilnas.lt">KAUNAS PILNAS KULTŪROS</a>
-                </HeaderItem>
-
-                <HeaderItem>
-                   <a href="https://kaunozodynas.lt">KAUNO ŽODYNAS</a>
-                </HeaderItem>
-
-                <HeaderItem>
-                   <a href="https://kultura.kaunas.lt">KULTURA.KAUNAS.LT</a>
-                </HeaderItem>
-
-                <HeaderItem>
-                   <Link href="/parama">1.2%</Link>
-                </HeaderItem>
-
+                  { headerItems.map((item, index) => {
+                     if (item.linkType === "int") {
+                        return (
+                           <HeaderItem key={index}>
+                              <Link href={item.slug}>{
+                                 item.labelType === "text" 
+                                 ? item.label 
+                                 :  <a>
+                                       <Image 
+                                             src={item.iconUrl}
+                                             width={item.width}
+                                             height={item.height}>
+                                       </Image>
+                                    </a>
+                              }</Link>
+                           </HeaderItem>
+                        )
+                     } else {
+                        return (
+                           <HeaderItem key={index}>
+                              <a href={item.url}> {
+                                    item.labelType === "text" 
+                                    ? item.label 
+                                    :  <Image 
+                                          src={item.iconUrl}
+                                          width={item.width}
+                                          height={item.height}>
+                                       </Image>
+                                 }
+                              </a>
+                           </HeaderItem>
+                        )
+                     }
+                  })}
             </StyledHeaderContents>            
         </StyledHeader>
     )

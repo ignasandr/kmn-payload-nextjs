@@ -5,6 +5,8 @@ import LeftNav from "./leftnav";
 import Burger from "./burger";
 import NavLogo from "./navLogo";
 import nav from "../../data/nav.json"
+import header from "../../data/header.json"
+import MobileMenu from "./mobileMenu";
 
 const StyledNavigation = styled.div`
     position: fixed;
@@ -71,21 +73,26 @@ const StyledLeftNavContainer = styled.nav`
     }
 `
 
+
+
 export default function Navigation() {
     const [openBurger, setOpenBurger] = useState(false);
 
     return (
-        <StyledNavigation>
-            <StyledNavLogoContainer>
-                <NavLogo />
-            </StyledNavLogoContainer>
-            <StyledBurgerContainer>
-                <Burger open={openBurger} onClick={() => setOpenBurger(!openBurger)}/>
-            </StyledBurgerContainer>
-            <StyledLeftNavContainer>
-                <LeftNav navItems={nav.navItems} />
-            </StyledLeftNavContainer>
-            <Header />
-        </StyledNavigation>
+        <>
+            <StyledNavigation>
+                <StyledNavLogoContainer>
+                    <NavLogo />
+                </StyledNavLogoContainer>
+                <StyledBurgerContainer>
+                    <Burger open={openBurger} onClick={() => setOpenBurger(!openBurger)}/>
+                </StyledBurgerContainer>
+                <StyledLeftNavContainer>
+                    <LeftNav navItems={nav.navItems} />
+                </StyledLeftNavContainer>
+                <Header headerItems={header.headerItems}/>
+            </StyledNavigation>
+            <MobileMenu navItems={nav.navItems} headerItems={header.headerItems} open={openBurger}/>
+        </>
     )
 }
