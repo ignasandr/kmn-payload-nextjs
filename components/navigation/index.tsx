@@ -31,7 +31,7 @@ const StyledNavigation = styled.div`
         flex-direction: row;
         align-items: flex-start;
         justify-content: space-between;
-        width: 100vw;
+        width: 100%;
         margin-top: 13px;
         padding-bottom: 7px;
         border-bottom: solid 1px lightgray;

@@ -1,4 +1,6 @@
+import Link from "next/link";
 import styled from "styled-components";
+import Image from "next/image";
 
 type MobileNavProps = {
     navItems: {
@@ -28,13 +30,15 @@ type MobileNavProps = {
 
 const StyledMobileMenuContainer = styled.ul<{open: boolean, h: number}>`
     position: absolute;
-    margin: 55px 0 0 0;
+    margin: 54px 0 0 0;
+    padding: 0;
     top: 0;
     left: 50%;
     transform: translate(-50%);
     background: #fff;
-    width: 75vw;
+    width: 80vw;
     /* display: ${props => props.open ? "block" : "none" }; */
+    list-style-type: none;
     display: none;
     z-index: 1;
     box-shadow: 0 2px 5px rgb(0 0 0 / 10%);
@@ -42,17 +46,43 @@ const StyledMobileMenuContainer = styled.ul<{open: boolean, h: number}>`
     -webkit-box-shadow: 0 2px 5px rgb(0 0 0 / 10%);
 
     max-height: ${props => (props.open ? props.h + "px" : "0px")};
-    transition: max-height 0.6s ease-in-out, opacity 0.4s ease;
+    transition: max-height 0.6s ease-in-out;
     overflow: hidden;
 
     @media (max-width: 980px) {
-        display: block;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 `
 
-const StyledMobileMenuItem = styled.li<{type: string}>`
-    padding-left: ${props => props.type === "collapse" ? "50px" : "0"};
-    height: 50px;
+const StyledMobileMenuItemContainer = styled.li<{type: string}>`
+    background-color: ${props => props.type === "collapse" ? "#F8F8F8" : "#fff"};
+    min-height: 40px;
+    user-select: none;
+    cursor: ${props => props.type === "collapse" ? " " : "pointer"};
+    border-bottom: 1px solid rgba(0,0,0,.03);
+    margin: 0;
+    width: 90%;
+    display: flex;
+    align-items: center;
+
+    &:hover {
+        background-color: #F8F8F8;
+    }
+`
+
+const StyledMobileMenuItem = styled.div<{sub: boolean}>`
+    font-family: ${props => props.theme.fonts.base};
+    color: ${props => props.theme.colors.base};
+    font-size: 14px;
+    font-weight: bold;
+    margin-left: ${props => props.sub ? "60px" : "30px"};
+
+    a {
+        text-decoration: none;
+        color: ${props => props.theme.colors.base};
+    }
 `
 
 export default function MobileMenu({navItems, headerItems, open}: MobileNavProps) {
@@ -60,9 +90,7 @@ export default function MobileMenu({navItems, headerItems, open}: MobileNavProps
 
     navItems.forEach(item => {
         if (item.type === "collapse") {
-            item.subcategories.forEach(subcategory => {
-                navItemSubcategories += 1;
-            });
+            navItemSubcategories += item.subcategories.length
         }
     });
 
@@ -70,11 +98,76 @@ export default function MobileMenu({navItems, headerItems, open}: MobileNavProps
 
     return(
         <StyledMobileMenuContainer open={open} h={height}>
-            {navItems.map((item, index) => {
-                return <StyledMobileMenuItem type={item.type} key={index}>
-                            Test
-                       </StyledMobileMenuItem> 
-            })}
+            <>
+                {navItems.map((item, index) => {
+                    if(item.type === "collapse") {
+                        return <>
+                                    <StyledMobileMenuItemContainer type={item.type} key={index}>
+                                            <StyledMobileMenuItem sub={false}>{item.label}</StyledMobileMenuItem>
+                                    </StyledMobileMenuItemContainer> 
+                                    {item.subcategories.map((subcategory, index) => {
+                                        return <Link href={subcategory.slug}>
+                                                    <StyledMobileMenuItemContainer type="subcategory" key={index}>
+                                                                <StyledMobileMenuItem sub={true}>
+                                                                        {subcategory.label}
+                                                                </StyledMobileMenuItem>
+                                                    </StyledMobileMenuItemContainer>
+                                                </Link>
+                                    })}
+                                </>
+
+                    } else {
+                        return <Link href={item.slug}>
+                                    <StyledMobileMenuItemContainer type={item.type} key={index}>
+                                        <StyledMobileMenuItem sub={false}>{item.label}</StyledMobileMenuItem>
+                                    </StyledMobileMenuItemContainer> 
+                                </Link>
+                        }
+                })}
+                {
+                    headerItems.map((item, index) => {
+                     if (item.linkType === "int") {
+                        return (
+                                <StyledMobileMenuItemContainer type={item.linkType} key={index}>
+                                    <Link href={item.slug}>
+                                        <StyledMobileMenuItem sub={false}>
+                                            {
+                                                item.labelType === "text" 
+                                                ? item.label 
+                                                : <a>
+                                                    <Image 
+                                                            src={item.iconUrl}
+                                                            width={item.width}
+                                                            height={item.height}>
+                                                    </Image>
+                                                </a>
+                                            }
+                                        </StyledMobileMenuItem>
+                                    </Link>
+                                </StyledMobileMenuItemContainer>
+                        )
+                     } else {
+                        return (
+                                <StyledMobileMenuItemContainer type={item.linkType} key={index}>
+                                        <StyledMobileMenuItem sub={false}>
+                                            <a href={item.url}>
+                                        {
+                                                item.labelType === "text" 
+                                                ? item.label
+                                                :  <Image 
+                                                    src={item.iconUrl}
+                                                    width={item.width}
+                                                    height={item.height}>
+                                                </Image>
+                                        }
+                                            </a>
+                                        </StyledMobileMenuItem>
+                                </StyledMobileMenuItemContainer>
+                        )
+                     }
+                    })
+                }
+            </>
         </StyledMobileMenuContainer>
     )
 }
