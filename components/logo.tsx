@@ -2,14 +2,19 @@ import Image from "next/image";
 import Link from "next/link";
 import styled from "styled-components"
 
-export default function Logo() {
+type Props = {
+    width?: number,
+    height?: number
+}
+
+export default function Logo({ width = 145, height = 52 }: Props) {
     return (
         <Link href="/">
             <StyledNavImageContainer>
                 <Image 
                     src="/KMNlogo.png"
-                    width={145}
-                    height={52}
+                    width={width}
+                    height={height}
                 />
             </StyledNavImageContainer>
         </Link>

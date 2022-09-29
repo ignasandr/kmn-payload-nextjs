@@ -14,6 +14,12 @@ export default function Home() {
       <h1>Hello</h1>
       <p>World</p>
       <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere autem sunt iusto fugiat! Quibusdam ab nesciunt hic corrupti sapiente mollitia quod in, eius labore possimus quasi expedita alias commodi cupiditate!</p>
+      <StyledBaselineTest>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere autem sunt iusto fugiat! Quibusdam ab nesciunt hic corrupti sapiente mollitia quod in, eius labore possimus quasi expedita alias commodi cupiditate!</StyledBaselineTest>
     </Layout>
   )
 }
+
+const StyledBaselineTest = styled.div`
+  line-height: ${props => props.theme.base};
+  color: ${props => props.theme.colors.orange};
+`

@@ -6,6 +6,10 @@ type Props = {
   theme 
 }
 
+const htmlFontSize = 18;
+
+const baselinePX = 20;
+
 const GlobalStyle = createGlobalStyle<Props>`
     html,
     body {
@@ -13,6 +17,7 @@ const GlobalStyle = createGlobalStyle<Props>`
       margin: 0;
       font-family: ${props => props.theme.fonts.base};
       color: ${props => props.theme.colors.base};
+      font-size: ${htmlFontSize};
     }
 
     h1, h2, h3, h4, h5, h6 {
@@ -28,7 +33,15 @@ const theme = {
   fonts: {
     base: "Nexa",
     title: "NeueMachina"
-  }
+  },
+  breakpoints: {
+    xs: "576px",
+    s: "768px",
+    m: "992px",
+    l: "1200px",
+    xl: "1400px"
+  },
+  base: htmlFontSize / baselinePX,
 }
 
 function MyApp({ Component, pageProps }: AppProps) {

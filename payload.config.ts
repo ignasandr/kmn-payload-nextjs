@@ -2,8 +2,7 @@ import { buildConfig } from 'payload/config';
 import path from 'path';
 import Examples from './collections/Examples';
 import Users from './collections/Users';
-import Navbar from './globals/Navbar';
-import Header from './globals/Header';
+import Menu from './globals/Menu';
 
 export default buildConfig({
   serverURL: 'http://localhost:3000',
@@ -16,8 +15,7 @@ export default buildConfig({
     Examples,
   ],
   globals: [
-    Navbar,
-    Header
+    Menu,
   ],
   typescript: {
     outputFile: path.resolve(__dirname, 'payload-types.ts'),
