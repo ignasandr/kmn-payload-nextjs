@@ -45,24 +45,24 @@ export default function MobileMenu({navItems, headerItems, open}: Props) {
             <>
                 {navItems.map((item, index) => {
                     if(item.type === "collapse") {
-                        return <>
-                                    <StyledMobileMenuItemContainer type={item.type} key={index}>
+                        return <div key={index}>
+                                    <StyledMobileMenuItemContainer type={item.type}>
                                             <StyledMobileMenuItem sub={false}>{item.label}</StyledMobileMenuItem>
                                     </StyledMobileMenuItemContainer> 
                                     {item.subcategories.map((subcategory, index) => {
-                                        return <Link href={subcategory.slug}>
-                                                    <StyledMobileMenuItemContainer type="subcategory" key={index}>
+                                        return <Link href={subcategory.slug} key={index}>
+                                                    <StyledMobileMenuItemContainer type="subcategory">
                                                                 <StyledMobileMenuItem sub={true}>
                                                                         {subcategory.label}
                                                                 </StyledMobileMenuItem>
                                                     </StyledMobileMenuItemContainer>
                                                 </Link>
                                     })}
-                                </>
+                                </div>
 
                     } else {
-                        return <Link href={item.slug}>
-                                    <StyledMobileMenuItemContainer type={item.type} key={index}>
+                        return <Link href={item.slug} key={index}>
+                                    <StyledMobileMenuItemContainer type={item.type}>
                                         <StyledMobileMenuItem sub={false}>{item.label}</StyledMobileMenuItem>
                                     </StyledMobileMenuItemContainer> 
                                 </Link>
@@ -71,8 +71,7 @@ export default function MobileMenu({navItems, headerItems, open}: Props) {
                 {
                     headerItems.map((item, index) => {
                      if (item.linkType === "int") {
-                        return (
-                                <StyledMobileMenuItemContainer type={item.linkType} key={index}>
+                        return ( <StyledMobileMenuItemContainer type={item.linkType} key={index}>
                                     <Link href={item.slug}>
                                         <StyledMobileMenuItem sub={false}>
                                             {
