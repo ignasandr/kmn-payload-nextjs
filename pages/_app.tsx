@@ -2,11 +2,21 @@ import type { AppProps } from 'next/app'
 import { createGlobalStyle, ThemeProvider } from "styled-components";
 import '../styles/typography.css'
 
-const GlobalStyle = createGlobalStyle`
+type Props = {
+  theme 
+}
+
+const GlobalStyle = createGlobalStyle<Props>`
     html,
     body {
       padding: 0;
       margin: 0;
+      font-family: ${props => props.theme.fonts.base};
+      color: ${props => props.theme.colors.base};
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+      font-family: ${props => props.theme.fonts.title};
     }
 `
 
@@ -24,8 +34,8 @@ const theme = {
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>
-      <GlobalStyle />
       <ThemeProvider theme={theme}>
+      <GlobalStyle />
         <Component {...pageProps} />
       </ThemeProvider>
     </>

@@ -28,14 +28,25 @@ const Navbar: GlobalConfig = {
                 ]
             },
             {
-                name: 'label',
-                type: 'text',
-                required: true,
-            },
-            {
-                name: 'slug',
-                type: 'text',
-                required: true,
+                type: 'row',
+                fields: [
+                    {
+                        name: 'label',
+                        type: 'text',
+                        required: true,
+                        admin: {
+                            width: "50%"
+                        }
+                    },
+                    {
+                        name: 'slug',
+                        type: 'text',
+                        required: true,
+                        admin: {
+                            width: "50%"
+                        }
+                    },
+                ]
             },
             {
                 name: 'subcategories',
@@ -46,14 +57,25 @@ const Navbar: GlobalConfig = {
                 },
                 fields: [
                     {
-                        name: 'label',
-                        type: 'text',
-                        required: true,
-                    },
-                    {
-                        name: 'slug',
-                        type: 'text',
-                        required: true,
+                        type: 'row',
+                        fields: [
+                            {
+                                name: 'label',
+                                type: 'text',
+                                required: true,
+                                admin: {
+                                    width: "50%"
+                                }
+                            },
+                            {
+                                name: 'slug',
+                                type: 'text',
+                                required: true,
+                                admin: {
+                                    width: "50%"
+                                }
+                            }
+                        ]
                     }
                 ],
             },

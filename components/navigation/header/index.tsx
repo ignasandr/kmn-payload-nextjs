@@ -3,8 +3,7 @@ import HeaderItem from "./headerItem";
 import Link from "next/link";
 import Image from "next/image";
 
-
-type HeaderProps = {
+type Props = {
     headerItems: {
         linkType: string;
         url?: string;
@@ -18,30 +17,7 @@ type HeaderProps = {
     }[]
 }
 
-const StyledHeader = styled.nav`
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 1;
-
-   @media (max-width: 980px) {
-      display: none;
-   }
-`
-
-const StyledHeaderContents = styled.div`
-    display: flex;
-    flex-direction: row;
-    padding-top: 10.5px;
-    padding-bottom: 8.5px;
-    width: 100%;
-    padding-left: 20vw;
-    background-color: white;
-    align-items: flex-end;
-
-`
-
-export default function Header({headerItems}: HeaderProps) {
+export default function Header({headerItems}: Props) {
     return (
         <StyledHeader>
             <StyledHeaderContents>
@@ -83,3 +59,25 @@ export default function Header({headerItems}: HeaderProps) {
         </StyledHeader>
     )
 }
+
+const StyledHeader = styled.nav`
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+
+   @media (max-width: 980px) {
+      display: none;
+   }
+`
+
+const StyledHeaderContents = styled.div`
+    display: flex;
+    flex-direction: row;
+    padding-top: 10.5px;
+    padding-bottom: 8.5px;
+    width: 100%;
+    padding-left: 20vw;
+    background-color: white;
+    align-items: flex-end;
+`

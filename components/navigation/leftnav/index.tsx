@@ -5,7 +5,7 @@ import NavLink from "./navLink";
 import NavLinkCollapse from "./navLinkCollapse";
 import NavSubcategories from "./navSubcategories";
 
-type LeftNavProps = {
+type Props = {
     navItems: {
         type: string;
         label: string;
@@ -19,17 +19,7 @@ type LeftNavProps = {
     }[]
 }
 
-const StyledUl = styled.ul`
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-`
-
-const StyledCollapseContainer = styled.div`
-
-`
-
-export default function LeftNav({navItems}: LeftNavProps) {
+export default function LeftNav({navItems}: Props) {
     const [open, setOpen] = useState(null);
     const router = useRouter();
     const path = router.pathname;
@@ -43,7 +33,7 @@ export default function LeftNav({navItems}: LeftNavProps) {
     }
 
     return (
-        <StyledUl>
+        <StyledLeftNavContainer>
                 { navItems.map((item, index) => {
                     if (item.type === 'collapse') {
                     return (
@@ -70,6 +60,16 @@ export default function LeftNav({navItems}: LeftNavProps) {
                     }
                 })
                 }
-        </StyledUl>
+        </StyledLeftNavContainer>
     )
 }
+
+const StyledLeftNavContainer = styled.ul`
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+`
+
+const StyledCollapseContainer = styled.div`
+
+`

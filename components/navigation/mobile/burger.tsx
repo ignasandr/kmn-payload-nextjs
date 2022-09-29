@@ -1,9 +1,19 @@
 import { MouseEventHandler } from "react";
 import styled from "styled-components";
 
-type BurgerProps = {
+type Props = {
     open: boolean,
     onClick: MouseEventHandler<HTMLDivElement>
+}
+
+export default function Burger({ open, onClick }: Props) {
+    return(
+        <StyledBurger onClick={onClick}>
+            <StyledBurgerLine open={open}/>
+            <StyledBurgerLine open={open}/>
+            <StyledBurgerLine open={open}/>
+        </StyledBurger>
+    )
 }
 
 const StyledBurger = styled.div`
@@ -40,13 +50,3 @@ const StyledBurgerLine = styled.div<{open: boolean}>`
 
     transition: all 0.2s ease-in;
 `
-
-export default function Burger({ open, onClick }: BurgerProps) {
-    return(
-        <StyledBurger onClick={onClick}>
-            <StyledBurgerLine open={open}/>
-            <StyledBurgerLine open={open}/>
-            <StyledBurgerLine open={open}/>
-        </StyledBurger>
-    )
-}

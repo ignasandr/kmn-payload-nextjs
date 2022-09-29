@@ -79,21 +79,28 @@ const Header: GlobalConfig = {
                 },
             },
             {
-                name: 'width',
-                type: 'number',
-                required: true,
-                admin: {
-                    condition: (_, { labelType } = {}) => labelType === 'icon',
-                },
-            },
-            {
-                name: 'height',
-                type: 'number',
-                required: true,
-                admin: {
-                    condition: (_, { labelType } = {}) => labelType === 'icon',
-                },
-            },
+                type: 'row',
+                fields: [
+                    {
+                        name: 'width',
+                        type: 'number',
+                        required: true,
+                        admin: {
+                            condition: (_, { labelType } = {}) => labelType === 'icon',
+                            width: '50%'
+                        },
+                    },
+                    {
+                        name: 'height',
+                        type: 'number',
+                        required: true,
+                        admin: {
+                            condition: (_, { labelType } = {}) => labelType === 'icon',
+                            width: '50%'
+                        },
+                    },
+                ]
+            }
             ]
         }
     ]

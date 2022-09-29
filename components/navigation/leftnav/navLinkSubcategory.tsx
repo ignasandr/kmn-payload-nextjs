@@ -2,10 +2,22 @@ import styled from "styled-components"
 import Link from "next/link";
 import { ReactNode } from "react";
 
-type NavLinkSubcategoryProps = {
+type Props = {
     children?: ReactNode,
     href: string,
     selected: boolean
+}
+
+export default function NavLinkSubcategory ({children, href, selected}: Props) { 
+    return (
+        <Link href={href}>
+            <StyledNavLinkSubcategory
+                selected={selected}
+            >
+                {children}
+            </StyledNavLinkSubcategory>
+        </Link>
+    )
 }
 
 const StyledNavLinkSubcategory = styled.div<{ selected: boolean }>`
@@ -23,15 +35,3 @@ const StyledNavLinkSubcategory = styled.div<{ selected: boolean }>`
     };
     transition: opacity 0.4s linear;
 `
-
-export default function NavLinkSubcategory ({children, href, selected}: NavLinkSubcategoryProps) { 
-    return (
-        <Link href={href}>
-            <StyledNavLinkSubcategory
-                selected={selected}
-            >
-                {children}
-            </StyledNavLinkSubcategory>
-        </Link>
-    )
-}

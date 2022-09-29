@@ -1,9 +1,17 @@
 import React, { ReactNode } from "react"
 import styled from "styled-components"
 
-type navLinkCollapseProps = {
+type Props = {
     children?: ReactNode,
     onClick: React.MouseEventHandler<HTMLLIElement>
+}
+
+export default function NavLinkCollapse ({ children, onClick }: Props) {
+    return (
+        <StyledNavLinkCollapse onClick={onClick}>
+            {children}
+        </StyledNavLinkCollapse>
+    )
 }
 
 const StyledNavLinkCollapse = styled.li<{onClick: React.MouseEventHandler<HTMLLIElement>}>`
@@ -29,11 +37,3 @@ const StyledNavLinkCollapse = styled.li<{onClick: React.MouseEventHandler<HTMLLI
     }
     user-select: none;
 `
-
-export default function NavLinkCollapse ({ children, onClick }: navLinkCollapseProps) {
-    return (
-        <StyledNavLinkCollapse onClick={onClick}>
-            {children}
-        </StyledNavLinkCollapse>
-    )
-}

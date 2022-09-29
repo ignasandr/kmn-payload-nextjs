@@ -2,7 +2,7 @@ import Link from "next/link";
 import styled from "styled-components";
 import Image from "next/image";
 
-type MobileNavProps = {
+type Props = {
     navItems: {
         type: string;
         label: string;
@@ -28,72 +28,16 @@ type MobileNavProps = {
     open: boolean
 }
 
-const StyledMobileMenuContainer = styled.ul<{open: boolean, h: number}>`
-    position: absolute;
-    margin: 54px 0 0 0;
-    padding: 0;
-    top: 0;
-    left: 50%;
-    transform: translate(-50%);
-    background: #fff;
-    width: 80vw;
-    /* display: ${props => props.open ? "block" : "none" }; */
-    list-style-type: none;
-    display: none;
-    z-index: 1;
-    box-shadow: 0 2px 5px rgb(0 0 0 / 10%);
-    -moz-box-shadow: 0 2px 5px rgba(0,0,0,.1);
-    -webkit-box-shadow: 0 2px 5px rgb(0 0 0 / 10%);
 
-    max-height: ${props => (props.open ? props.h + "px" : "0px")};
-    transition: max-height 0.6s ease-in-out;
-    overflow: hidden;
-
-    @media (max-width: 980px) {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-`
-
-const StyledMobileMenuItemContainer = styled.li<{type: string}>`
-    background-color: ${props => props.type === "collapse" ? "#F8F8F8" : "#fff"};
-    min-height: 40px;
-    user-select: none;
-    cursor: ${props => props.type === "collapse" ? " " : "pointer"};
-    border-bottom: 1px solid rgba(0,0,0,.03);
-    margin: 0;
-    width: 90%;
-    display: flex;
-    align-items: center;
-
-    &:hover {
-        background-color: #F8F8F8;
-    }
-`
-
-const StyledMobileMenuItem = styled.div<{sub: boolean}>`
-    font-family: ${props => props.theme.fonts.base};
-    color: ${props => props.theme.colors.base};
-    font-size: 14px;
-    font-weight: bold;
-    margin-left: ${props => props.sub ? "60px" : "30px"};
-
-    a {
-        text-decoration: none;
-        color: ${props => props.theme.colors.base};
-    }
-`
-
-export default function MobileMenu({navItems, headerItems, open}: MobileNavProps) {
+export default function MobileMenu({navItems, headerItems, open}: Props) {
     let navItemSubcategories = 0;
-
+    // get total number of subcategories for height calculation
     navItems.forEach(item => {
         if (item.type === "collapse") {
             navItemSubcategories += item.subcategories.length
         }
     });
-
+    // calculate height for animated max-height
     const height = 40 * (navItems.length + navItemSubcategories + headerItems.length);
 
     return(
@@ -171,3 +115,59 @@ export default function MobileMenu({navItems, headerItems, open}: MobileNavProps
         </StyledMobileMenuContainer>
     )
 }
+
+const StyledMobileMenuContainer = styled.ul<{open: boolean, h: number}>`
+    position: absolute;
+    margin: 54px 0 0 0;
+    padding: 0;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%);
+    background: #fff;
+    width: 80vw;
+    list-style-type: none;
+    display: none;
+    z-index: 1;
+    box-shadow: 0 2px 5px rgb(0 0 0 / 10%);
+    -moz-box-shadow: 0 2px 5px rgba(0,0,0,.1);
+    -webkit-box-shadow: 0 2px 5px rgb(0 0 0 / 10%);
+
+    max-height: ${props => (props.open ? props.h + "px" : "0px")};
+    transition: max-height 0.6s ease-in-out;
+    overflow: hidden;
+
+    @media (max-width: 980px) {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+`
+
+const StyledMobileMenuItemContainer = styled.li<{type: string}>`
+    background-color: ${props => props.type === "collapse" ? "#F8F8F8" : "#fff"};
+    min-height: 40px;
+    user-select: none;
+    cursor: ${props => props.type === "collapse" ? " " : "pointer"};
+    border-bottom: 1px solid rgba(0,0,0,.03);
+    margin: 0;
+    width: 90%;
+    display: flex;
+    align-items: center;
+
+    &:hover {
+        background-color: #F8F8F8;
+    }
+`
+
+const StyledMobileMenuItem = styled.div<{sub: boolean}>`
+    font-family: ${props => props.theme.fonts.base};
+    color: ${props => props.theme.colors.base};
+    font-size: 14px;
+    font-weight: bold;
+    margin-left: ${props => props.sub ? "60px" : "30px"};
+
+    a {
+        text-decoration: none;
+        color: ${props => props.theme.colors.base};
+    }
+`

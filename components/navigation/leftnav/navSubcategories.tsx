@@ -2,39 +2,15 @@ import styled from "styled-components"
 import NavLinkSubcategory from "./navLinkSubcategory";
 import { useRouter } from "next/router";
 
-type Subcategory = {
-    label: string,
-    slug: string
-}
-
-type NavSubcategoriesProps = {
+type Props = {
     open: boolean,
-    subcategories: Subcategory[]
+    subcategories: {
+        label: string,
+        slug: string
+    }[]
 }
 
-const StyledSubcategories = styled.div<{ open: boolean, h: number }>`
-    background: white;
-    max-height: ${props => (props.open ? props.h + "px" : "0px")};
-    opacity: ${props => (props.open ? "1" : "0")};
-    transition: max-height 0.6s ease-in-out, opacity 0.4s ease;
-    overflow: hidden;
-
-`
-
-const StyledSubcatagoriesMargin = styled.div`
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    align-content: flex-start;
-    justify-content: flex-end;
-    text-align: right;
-    margin: 5px 0;
-`
-
-
-
-// components
-export default function NavSubcategories ({ open, subcategories }: NavSubcategoriesProps) {
+export default function NavSubcategories ({ open, subcategories }: Props) {
 
     const router = useRouter();
     const queryString = router.query.toString();
@@ -61,3 +37,22 @@ export default function NavSubcategories ({ open, subcategories }: NavSubcategor
             </StyledSubcategories>
     )
 }
+
+const StyledSubcategories = styled.div<{ open: boolean, h: number }>`
+    background: white;
+    max-height: ${props => (props.open ? props.h + "px" : "0px")};
+    opacity: ${props => (props.open ? "1" : "0")};
+    transition: max-height 0.6s ease-in-out, opacity 0.4s ease;
+    overflow: hidden;
+
+`
+
+const StyledSubcatagoriesMargin = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    align-content: flex-start;
+    justify-content: flex-end;
+    text-align: right;
+    margin: 5px 0;
+`

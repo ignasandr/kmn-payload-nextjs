@@ -2,11 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import styled from "styled-components"
 
-const StyledNavImageContainer = styled.div`
-    cursor: pointer;
-`
-
-export default function NavLogo() {
+export default function Logo() {
     return (
         <Link href="/">
             <StyledNavImageContainer>
@@ -19,3 +15,7 @@ export default function NavLogo() {
         </Link>
     )
 }
+
+const StyledNavImageContainer = styled.div`
+    cursor: pointer;
+`

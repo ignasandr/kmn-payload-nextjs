@@ -5,6 +5,10 @@ interface Props {
     children?: ReactNode;
 }
 
+export default function HeaderItem({ children }: Props) {
+    return <StyledHeaderItem>{children}</StyledHeaderItem>
+}
+
 const StyledHeaderItem = styled.span`
     margin-right: 19px;
     cursor: pointer;
@@ -22,7 +26,3 @@ const StyledHeaderItem = styled.span`
     };
     transition:opacity 0.4s linear;
 `
-
-export default function HeaderItem({ children }: Props) {
-    return <StyledHeaderItem>{children}</StyledHeaderItem>
-}

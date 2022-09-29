@@ -2,13 +2,25 @@ import styled from "styled-components"
 import Link from "next/link";
 import { ReactNode } from "react";
 
-type NavLinkProps = {
+type Props = {
     children?: ReactNode,
     to: string,
     selected: boolean
 }
 
-export const StyledNavText = styled.div<{ selected: boolean }>`
+export default function NavLink ({children, to, selected}: Props) {
+    return (
+        <li>
+            <Link href={to}>
+                <StyledNavText selected={selected}>
+                        {children}
+                </StyledNavText>
+            </Link>
+        </li>
+    )
+}
+
+const StyledNavText = styled.div<{ selected: boolean }>`
     font-family: ${props => props.theme.fonts.base};
     padding: 0 20px 11px 0;
     cursor: pointer;
@@ -24,17 +36,3 @@ export const StyledNavText = styled.div<{ selected: boolean }>`
     transition: opacity 0.4s linear;
     user-select: none;
 `
-
-
-// components
-export default function NavLink ({children, to, selected}: NavLinkProps) {
-    return (
-        <li>
-            <Link href={to}>
-                <StyledNavText selected={selected}>
-                        {children}
-                </StyledNavText>
-            </Link>
-        </li>
-    )
-}

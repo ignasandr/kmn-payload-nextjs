@@ -8,6 +8,21 @@ type Props = {
     title?: string
 }
 
+export default function Layout ({ children, title = "Kauno Menininkų Namai"}: Props ) {
+    return (
+        <React.Fragment>
+            <Head>
+                <link rel="icon" href="/favicon.ico" />
+                <meta property="og:title" content={title} key="title" />
+            </Head>
+            <Navigation />
+            <Container>
+                <Content>{children}</Content>
+            </Container>
+        </React.Fragment>
+    )
+}
+
 const Container = styled.div`
     margin-left: 20vw;
     margin-right: 30px;
@@ -28,18 +43,3 @@ const Content = styled.div`
        margin-right: 0;
     }
 `
-
-export default function Layout ({ children, title = "Kauno Menininkų Namai"}: Props ) {
-    return (
-        <React.Fragment>
-            <Head>
-                <link rel="icon" href="/favicon.ico" />
-                <meta property="og:title" content={title} key="title" />
-            </Head>
-            <Navigation />
-            <Container>
-                <Content>{children}</Content>
-            </Container>
-        </React.Fragment>
-    )
-}

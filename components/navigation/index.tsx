@@ -2,11 +2,33 @@ import { useState } from "react";
 import styled from "styled-components";
 import Header from "./header";
 import LeftNav from "./leftnav";
-import Burger from "./burger";
-import NavLogo from "./navLogo";
+import Burger from "./mobile/burger";
+import Logo from "../logo";
 import nav from "../../data/nav.json"
 import header from "../../data/header.json"
-import MobileMenu from "./mobileMenu";
+import MobileMenu from "./mobile";
+
+export default function Navigation() {
+    const [openBurger, setOpenBurger] = useState(false);
+
+    return (
+        <>
+            <StyledNavigation>
+                <StyledNavLogoContainer>
+                    <Logo />
+                </StyledNavLogoContainer>
+                <StyledBurgerContainer>
+                    <Burger open={openBurger} onClick={() => setOpenBurger(!openBurger)}/>
+                </StyledBurgerContainer>
+                <StyledLeftNavContainer>
+                    <LeftNav navItems={nav.navItems} />
+                </StyledLeftNavContainer>
+                <Header headerItems={header.headerItems}/>
+            </StyledNavigation>
+            <MobileMenu navItems={nav.navItems} headerItems={header.headerItems} open={openBurger}/>
+        </>
+    )
+}
 
 const StyledNavigation = styled.div`
     position: fixed;
@@ -72,27 +94,3 @@ const StyledLeftNavContainer = styled.nav`
         display: none;
     }
 `
-
-
-
-export default function Navigation() {
-    const [openBurger, setOpenBurger] = useState(false);
-
-    return (
-        <>
-            <StyledNavigation>
-                <StyledNavLogoContainer>
-                    <NavLogo />
-                </StyledNavLogoContainer>
-                <StyledBurgerContainer>
-                    <Burger open={openBurger} onClick={() => setOpenBurger(!openBurger)}/>
-                </StyledBurgerContainer>
-                <StyledLeftNavContainer>
-                    <LeftNav navItems={nav.navItems} />
-                </StyledLeftNavContainer>
-                <Header headerItems={header.headerItems}/>
-            </StyledNavigation>
-            <MobileMenu navItems={nav.navItems} headerItems={header.headerItems} open={openBurger}/>
-        </>
-    )
-}
