@@ -45,7 +45,7 @@ export default function MobileMenu({navItems, headerItems, open}: Props) {
             <>
                 {navItems.map((item, index) => {
                     if(item.type === "collapse") {
-                        return <div key={index}>
+                        return <>
                                     <StyledMobileMenuItemContainer type={item.type}>
                                             <StyledMobileMenuItem sub={false}>{item.label}</StyledMobileMenuItem>
                                     </StyledMobileMenuItemContainer> 
@@ -58,7 +58,7 @@ export default function MobileMenu({navItems, headerItems, open}: Props) {
                                                     </StyledMobileMenuItemContainer>
                                                 </Link>
                                     })}
-                                </div>
+                                </>
 
                     } else {
                         return <Link href={item.slug} key={index}>
@@ -140,6 +140,10 @@ const StyledMobileMenuContainer = styled.ul<{open: boolean, h: number}>`
         flex-direction: column;
         align-items: center;
     }
+`
+
+const StyledMobileCollapseContainer = styled.div`
+    width: 100%;
 `
 
 const StyledMobileMenuItemContainer = styled.li<{type: string}>`
