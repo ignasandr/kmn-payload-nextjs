@@ -17,8 +17,8 @@ export default function Burger({ open, onClick }: Props) {
 }
 
 const StyledBurger = styled.div`
-    width: 1.8rem;
-    height: 1.8rem;
+    width: 30px;
+    height: 30px;
     display: flex;
     justify-content: space-around;
     flex-flow: column nowrap;
@@ -26,8 +26,8 @@ const StyledBurger = styled.div`
 `
 
 const StyledBurgerLine = styled.div<{open: boolean}>`
-    width: 1.8rem;
-    height: 0.20rem;
+    width: 30px;
+    height: 3px;
     background-color: ${props => props.theme.colors.base};
     border-radius: 10px;
     transform-origin: 1px;

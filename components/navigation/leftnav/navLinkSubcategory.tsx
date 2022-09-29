@@ -21,7 +21,6 @@ export default function NavLinkSubcategory ({children, href, selected}: Props) {
 }
 
 const StyledNavLinkSubcategory = styled.div<{ selected: boolean }>`
-    font-family: ${props => props.theme.fonts.base};
     padding: 0 20px 6px 0;
     cursor: pointer;
     font-weight: 400;
