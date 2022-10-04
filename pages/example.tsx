@@ -1,4 +1,3 @@
-import styled from "styled-components";
 import { GetStaticProps, InferGetStaticPropsType } from "next";
 import payload from 'payload';
 import Layout from "../components/layout";
@@ -10,27 +9,16 @@ interface Example {
     updatedAt: string
 }
 
-const StyledExample = styled.div`
-    h2 {
-        color: ${props => props.theme.colors.base};
-        font-family: ${props => props.theme.fonts.title};
-    }
-    p {
-        color: ${props => props.theme.colors.orange};
-        font-family: ${props => props.theme.fonts.base};
-    }
-`
-
 export default function Examples({ examples }: InferGetStaticPropsType<typeof getStaticProps>) {
     return (
         <Layout>
             {examples.docs.map((example:Example) => {
                 return (
-                    <StyledExample key={example.id}>
+                    <section key={example.id}>
                         <h2>{example.thisIsAField}</h2> 
                         <p>{example.createdAt}</p>
                         <p>{example.updatedAt}</p>
-                    </StyledExample>
+                    </section>
                 )
             })}
         </Layout>
