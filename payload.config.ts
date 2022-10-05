@@ -3,6 +3,8 @@ import path from 'path';
 import Examples from './collections/Examples';
 import Users from './collections/Users';
 import Menu from './globals/Menu';
+import Media from './collections/Media'
+import Pages from './collections/Pages'
 
 export default buildConfig({
   serverURL: 'http://localhost:3000',
@@ -11,8 +13,9 @@ export default buildConfig({
   },
   collections: [
     Users,
-    // Add Collections here
     Examples,
+    Pages,
+    Media
   ],
   globals: [
     Menu,

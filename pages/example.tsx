@@ -10,17 +10,6 @@ interface Example {
     updatedAt: string
 }
 
-const StyledExample = styled.div`
-    h2 {
-        color: ${props => props.theme.colors.base};
-        font-family: ${props => props.theme.fonts.title};
-    }
-    p {
-        color: ${props => props.theme.colors.orange};
-        font-family: ${props => props.theme.fonts.base};
-    }
-`
-
 export default function Examples({ examples }: InferGetStaticPropsType<typeof getStaticProps>) {
     return (
         <Layout>
@@ -46,3 +35,14 @@ export const getStaticProps: GetStaticProps = async () => {
         props: { examples }
     }
 }
+
+const StyledExample = styled.div`
+    h2 {
+        color: ${props => props.theme.colors.base};
+        font-family: ${props => props.theme.fonts.title};
+    }
+    p {
+        color: ${props => props.theme.colors.orange};
+        font-family: ${props => props.theme.fonts.base};
+    }
+`

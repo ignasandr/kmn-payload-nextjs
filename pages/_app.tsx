@@ -6,7 +6,7 @@ type Props = {
   theme 
 }
 
-const htmlFontSize = 18;
+const htmlFontSize = 16;
 
 const baselinePX = 20;
 
@@ -17,7 +17,8 @@ const GlobalStyle = createGlobalStyle<Props>`
       margin: 0;
       font-family: ${props => props.theme.fonts.base};
       color: ${props => props.theme.colors.base};
-      font-size: ${htmlFontSize};
+      font-size: ${htmlFontSize}px;
+      line-height: ${props => props.theme.base}rem;
     }
 
     h1, h2, h3, h4, h5, h6 {
@@ -41,7 +42,7 @@ const theme = {
     l: "1200px",
     xl: "1400px"
   },
-  base: htmlFontSize / baselinePX,
+  base: baselinePX / htmlFontSize,
 }
 
 function MyApp({ Component, pageProps }: AppProps) {
