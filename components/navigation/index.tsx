@@ -44,11 +44,15 @@ const StyledHeaderContainer = styled.div`
 `
 
 const StyledMenuContainer = styled.ul`
-    display: flex;
-    flex-direction: row;
     list-style-type: none;
     margin: 0;
     padding: 0; 
+
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+
+    
 `
 
 const StyledAccesibilityContainer = styled.ul`
