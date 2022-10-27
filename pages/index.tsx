@@ -25,8 +25,4 @@ export default function Home() {
 }
 
 const StyledBaselineTest = styled.div`
-  & .test {
-    color: ${props => props.theme.colors.orange};
-    font-family: ${props => props.theme.fonts.title};
-  }
 `

@@ -8,39 +8,36 @@ type Props = {
 
 const htmlFontSize = 16;
 
-const baselinePX = 20;
+const baselinePX = 22;
 
 const GlobalStyle = createGlobalStyle<Props>`
     html,
     body {
       padding: 0;
       margin: 0;
-      font-family: ${props => props.theme.fonts.base};
-      color: ${props => props.theme.colors.base};
+      font-family: 'Poppins', sans-serif;
+      color: ${props => props.theme.colors.darkblue};
       font-size: ${htmlFontSize}px;
       line-height: ${props => props.theme.base}rem;
     }
 
     h1, h2, h3, h4, h5, h6 {
-      font-family: ${props => props.theme.fonts.title};
     }
 `
 
 const theme = {
   colors: {
-    base: "#000",
-    orange: "#D4583B"
-  },
-  fonts: {
-    base: "Nexa",
-    title: "NeueMachina"
+    white: "#ffffff",
+    gray: "#E5E5E5",
+    lighterblue: "#ADB1CC",
+    lightblue: "#6C739B",
+    blue: "#0336FF",
+    inkblue: "#111E6C",
+    darkblue: "#0F1538"
   },
   breakpoints: {
-    xs: "576px",
-    s: "768px",
-    m: "992px",
-    l: "1200px",
-    xl: "1400px"
+    s: "576px",
+    m: "980px",
   },
   base: baselinePX / htmlFontSize,
 }

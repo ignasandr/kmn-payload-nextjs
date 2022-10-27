@@ -37,12 +37,4 @@ export const getStaticProps: GetStaticProps = async () => {
 }
 
 const StyledExample = styled.div`
-    h2 {
-        color: ${props => props.theme.colors.base};
-        font-family: ${props => props.theme.fonts.title};
-    }
-    p {
-        color: ${props => props.theme.colors.orange};
-        font-family: ${props => props.theme.fonts.base};
-    }
 `

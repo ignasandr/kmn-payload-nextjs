@@ -7,12 +7,12 @@ type Props = {
     height?: number
 }
 
-export default function Logo({ width = 145, height = 52 }: Props) {
+export default function Logo({ width = 109, height = 40 }: Props) {
     return (
         <Link href="/">
             <StyledNavImageContainer>
                 <Image 
-                    src="/KMNlogo.png"
+                    src="/KMNlogo.svg"
                     width={width}
                     height={height}
                 />
@@ -23,4 +23,8 @@ export default function Logo({ width = 145, height = 52 }: Props) {
 
 const StyledNavImageContainer = styled.div`
     cursor: pointer;
+    
+    &img {
+        ${props => props.theme.colors.darkblue}
+    }
 `
