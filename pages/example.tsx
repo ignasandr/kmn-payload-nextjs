@@ -1,4 +1,3 @@
-import styled from "styled-components";
 import { GetStaticProps, InferGetStaticPropsType } from "next";
 import payload from 'payload';
 import Layout from "../components/layout";
@@ -15,11 +14,11 @@ export default function Examples({ examples }: InferGetStaticPropsType<typeof ge
         <Layout>
             {examples.docs.map((example:Example) => {
                 return (
-                    <StyledExample key={example.id}>
+                    <p key={example.id}>
                         <h2>{example.thisIsAField}</h2> 
                         <p>{example.createdAt}</p>
                         <p>{example.updatedAt}</p>
-                    </StyledExample>
+                    </p>
                 )
             })}
         </Layout>
@@ -35,6 +34,3 @@ export const getStaticProps: GetStaticProps = async () => {
         props: { examples }
     }
 }
-
-const StyledExample = styled.div`
-`

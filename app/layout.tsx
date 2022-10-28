@@ -1,6 +1,6 @@
 import { Poppins } from '@next/font/google'
 import { use } from "react";
-import Navbar from './navbar';
+import Navbar from '../components/Navigation/navbar';
 import './global.css';
 
 const poppins = Poppins({weight: "400", subsets: ['devanagari']});

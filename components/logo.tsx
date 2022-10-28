@@ -14,6 +14,7 @@ export default function Logo({ width = 109, height = 40 }: Props) {
                     alt="logo"
                     width={width}
                     height={height}
+                    style={{paddingTop: 10}}
                 />
         </Link>
     )

@@ -1,0 +1,20 @@
+:root {
+    --font-size-base: 16px;
+    
+    --color-darkblue: #0F1538;
+    --color-white: #ffffff;
+    --color-gray: #E5E5E5;
+    --color-lighterblue: #ADB1CC;
+    --color-lightblue: #6C739B;
+    --color-blue: #0336FF;
+    --color-inkblue: #111E6C;
+}
+
+body {
+    font-family: "Poppins", sans-serif, 'font-weight: 100, 200, 300, 400, 500, 600';
+    padding: 0;
+    margin: 0;
+    color: var(--color-darkblue);
+    font-size: var(--font-size-base);
+    font-weight: 100, 200, 300, 400, 500, 600;
+}
