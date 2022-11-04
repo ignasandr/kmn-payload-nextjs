@@ -11,7 +11,7 @@ interface Example {
 
 export default function Examples({ examples }: InferGetStaticPropsType<typeof getStaticProps>) {
     return (
-        <Layout>
+        <>
             {examples.docs.map((example:Example) => {
                 return (
                     <p key={example.id}>
@@ -21,7 +21,7 @@ export default function Examples({ examples }: InferGetStaticPropsType<typeof ge
                     </p>
                 )
             })}
-        </Layout>
+        </>
     )
 }
 

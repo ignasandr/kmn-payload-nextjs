@@ -1,10 +1,8 @@
 import Head from 'next/head'
-import Layout from '../components/layout'
-
 
 export default function Home() {
   return (
-    <Layout>
+    <>
       <Head>
         <title>KMN Svetainė</title>
         <meta name="description" content="Pagrindinis puslapis" />
@@ -13,6 +11,6 @@ export default function Home() {
       <h1>Hello</h1>
       <p>World</p>
       <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere autem sunt iusto fugiat! Quibusdam ab nesciunt hic corrupti sapiente mollitia quod in, eius labore possimus quasi expedita alias commodi cupiditate!</p>
-    </Layout>
+    </>
   )
 }

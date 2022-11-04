@@ -3,12 +3,13 @@ import Link from "next/link";
 
 type Props = {
     width?: number,
-    height?: number
+    height?: number,
+    onClick?: (event: React.MouseEvent) => void;
 }
 
-export default function Logo({ width = 109, height = 40 }: Props) {
+export default function Logo({ width = 109, height = 40, onClick }: Props) {
     return (
-        <Link href="/">
+        <Link href="/" onClick={onClick}>
                 <Image 
                     src="/KMNlogo.svg"
                     alt="logo"

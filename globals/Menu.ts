@@ -36,11 +36,11 @@ const Menu: GlobalConfig = {
                 name: 'submenu',
                 type: 'checkbox',
                 defaultValue: false,
-                label: 'Sub-menu'
+                label: 'Submenu'
             },
             {
                 name: 'submenuItems',
-                label: 'Sub-menu Items',
+                label: 'Submenu Items',
                 type: 'array',
                 admin: {
                     condition: (_, { submenu } = {}) => submenu,
@@ -68,17 +68,17 @@ const Menu: GlobalConfig = {
                         ]
                 },
                 {
-                    name: 'subsubmenu',
+                    name: 'submenu',
                     type: 'checkbox',
                     defaultValue: false,
-                    label: 'Sub-sub-menu'
+                    label: 'Submenu'
                 },
                 {
-                    name: 'subsubmenuItems',
-                    label: 'Sub-sub-menu Items',
+                    name: 'submenuItems',
+                    label: 'Submenu Items',
                     type: 'array',
                     admin: {
-                        condition: (_, { subsubmenu } = {}) => subsubmenu,
+                        condition: (_, { submenu } = {}) => submenu,
                     },
                     fields: [
                     {

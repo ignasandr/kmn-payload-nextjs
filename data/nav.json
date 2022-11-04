@@ -22,15 +22,62 @@
         {
           "label": "Vydomos veiklos",
           "slug": "vykdomos",
-          "subsubmenu": false,
-          "subsubmenuItems": [],
+          "submenu": true,
+          "submenuItems": [
+            {
+              "label": "Vydoma1",
+              "slug": "vykdoma1",
+              "id": "636372377397e049df4a778f"
+            },
+            {
+              "label": "Vykdoma2",
+              "slug": "vykdoma2",
+              "id": "636372467397e049df4a7790"
+            },
+            {
+              "label": "Vykdoma3",
+              "slug": "vykdoma3",
+              "id": "6363724f7397e049df4a7791"
+            },
+            {
+              "label": "Vykdoma4",
+              "slug": "vykdoma4",
+              "id": "636372577397e049df4a7792"
+            }
+          ],
           "id": "635763e5846eb75ec181d553"
         },
         {
           "label": "Įvykdytos veiklos",
           "slug": "ivykdytos",
-          "subsubmenu": false,
-          "subsubmenuItems": [],
+          "submenu": true,
+          "submenuItems": [
+            {
+              "label": "Įvykdyta1",
+              "slug": "ivykdyta1",
+              "id": "636372627397e049df4a7793"
+            },
+            {
+              "label": "Įvykdyta2",
+              "slug": "ivykdyta2",
+              "id": "636372717397e049df4a7794"
+            },
+            {
+              "label": "Įvykdyta3",
+              "slug": "ivykdyta3",
+              "id": "6363727b7397e049df4a7795"
+            },
+            {
+              "label": "Įvykdyta4",
+              "slug": "ivykdyta4",
+              "id": "636372867397e049df4a7796"
+            },
+            {
+              "label": "Įvykdyta5",
+              "slug": "ivykdyta5",
+              "id": "636372867397e049df4a7797"
+            }
+          ],
           "id": "635763f2846eb75ec181d554"
         }
       ],
@@ -44,36 +91,36 @@
         {
           "label": "Kas mes?",
           "slug": "kas-mes",
-          "subsubmenu": false,
-          "subsubmenuItems": [],
+          "submenu": false,
+          "submenuItems": [],
           "id": "63576416846eb75ec181d557"
         },
         {
           "label": "Istorija",
           "slug": "istorija",
-          "subsubmenu": false,
-          "subsubmenuItems": [],
+          "submenu": false,
+          "submenuItems": [],
           "id": "6357641e846eb75ec181d558"
         },
         {
           "label": "Teisinė ir kt. informacija",
           "slug": "teisine-informacija",
-          "subsubmenu": false,
-          "subsubmenuItems": [],
+          "submenu": false,
+          "submenuItems": [],
           "id": "63576427846eb75ec181d559"
         },
         {
           "label": "Paslaugos",
           "slug": "paslaugos",
-          "subsubmenu": false,
-          "subsubmenuItems": [],
+          "submenu": false,
+          "submenuItems": [],
           "id": "6357643c846eb75ec181d55a"
         },
         {
           "label": "Logotipai",
           "slug": "logotipai",
-          "subsubmenu": false,
-          "subsubmenuItems": [],
+          "submenu": false,
+          "submenuItems": [],
           "id": "6357644b846eb75ec181d55b"
         }
       ],
@@ -94,22 +141,22 @@
         {
           "label": "1.2%",
           "slug": "gpm",
-          "subsubmenu": false,
-          "subsubmenuItems": [],
+          "submenu": false,
+          "submenuItems": [],
           "id": "63576467846eb75ec181d55d"
         },
         {
           "label": "Savanorystė",
           "slug": "savanoryste",
-          "subsubmenu": false,
-          "subsubmenuItems": [],
+          "submenu": false,
+          "submenuItems": [],
           "id": "635764b0846eb75ec181d55e"
         },
         {
           "label": "Rėmėjai / partneriai",
           "slug": "partneriai",
-          "subsubmenu": false,
-          "subsubmenuItems": [],
+          "submenu": false,
+          "submenuItems": [],
           "id": "635764bd846eb75ec181d55f"
         }
       ],
@@ -118,6 +165,6 @@
   ],
   "globalType": "menu",
   "createdAt": "2022-09-29T16:19:09.663Z",
-  "updatedAt": "2022-10-25T04:23:50.638Z",
+  "updatedAt": "2022-11-03T07:49:46.018Z",
   "id": "6335c57d1b33dd9dc205afe1"
 }
