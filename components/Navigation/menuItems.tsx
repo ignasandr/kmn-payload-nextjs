@@ -21,8 +21,8 @@ export default function MenuItems({ label, slug, submenu, submenuItems, depthLev
             <li className={styles.menuItem}>
                 {submenu ? (
                     <>
-                        <button 
-                            type="button"
+                        <div 
+                            className={styles.button}
                             aria-haspopup="menu"
                             aria-expanded={dropdown ? "true" : "false"}
                             onClick={() => setDropdown((prev) => !prev)}
@@ -33,7 +33,7 @@ export default function MenuItems({ label, slug, submenu, submenuItems, depthLev
                                 dropdown={dropdown}     
                                 depthLevel={depthLevel}
                             />
-                        </button>
+                        </div>
                     </>
                 ) : (
                     <Link href={slug}>{label}</Link>

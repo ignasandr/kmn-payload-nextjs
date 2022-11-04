@@ -41,7 +41,7 @@
     cursor: pointer;
     user-select: none;
 }
-.menuItem > button {
+.menuItem > .button {
     padding: 10px 14px;
     /* display: flex;
     align-items: flex-start; */
@@ -66,7 +66,7 @@
     color: var(--color-lightblue);
 }
 
-.menuItem > button:hover {
+.menuItem > .button:hover {
     color: var(--color-lightblue);
 }
 
