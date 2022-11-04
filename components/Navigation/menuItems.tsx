@@ -17,6 +17,11 @@ type Props = {
 export default function MenuItems({ label, slug, submenu, submenuItems, depthLevel}: Props) {
     const [dropdown, setDropdown] = useState(false);
 
+    const handleClick = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
+        e.stopPropagation();
+        setDropdown(!dropdown)
+    }
+
     return (
             <li className={styles.menuItem}>
                 {submenu ? (
@@ -25,9 +30,10 @@ export default function MenuItems({ label, slug, submenu, submenuItems, depthLev
                             className={styles.button}
                             aria-haspopup="menu"
                             aria-expanded={dropdown ? "true" : "false"}
-                            onClick={() => setDropdown((prev) => !prev)}
+                            onClick={(e) => handleClick(e)}
                         >
                             {label}
+                            {depthLevel > 0 ? <span>&raquo;</span> : <span className={styles.arrow}></span>}
                             <Dropdown
                                 submenu={submenuItems}
                                 dropdown={dropdown}     

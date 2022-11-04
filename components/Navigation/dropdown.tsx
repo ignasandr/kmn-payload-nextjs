@@ -14,11 +14,14 @@ type Props = {
 }
 
 export default function Dropdown({ submenu, dropdown, depthLevel }: Props) {
+    depthLevel = depthLevel + 1;
+    const dropDownClass = depthLevel > 1 ? [styles.dropdown, styles.dropdownSubmenu].join(' ') : styles.dropdown;
+
     return (
-        <ul className={dropdown ? [styles.dropdown, styles.show].join(' ') : styles.dropdown }>
+        <ul className={dropdown ? [dropDownClass, styles.show].join(' ') : dropDownClass }>
             {submenu.map((subitem, index) => {
                 return (
-                    <MenuItems {...subitem} depthLevel={depthLevel + 1} key={index} />
+                    <MenuItems {...subitem} depthLevel={depthLevel} key={index} />
                 )
             })}
 
