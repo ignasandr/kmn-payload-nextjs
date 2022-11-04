@@ -30,8 +30,8 @@
 
 .menuItem {
     position: relative;
-    /* padding: 10px 14px; */
     background-color: var(--color-white);
+    width: 100%;
 
     font-weight: 600;
     font-size: 16px;
@@ -53,7 +53,8 @@
     border: none;
     background-color: transparent;
     cursor: pointer;
-    /* width: 100%; */
+    /* display: inline-block;
+    width: auto; */
 }
 
 .menuItem > .button > span {
@@ -104,7 +105,7 @@
 
 .dropdown .dropdownSubmenu {
   position: absolute;
-  left: 104%;
+  left: 100%;
   top: 0;
 }
 

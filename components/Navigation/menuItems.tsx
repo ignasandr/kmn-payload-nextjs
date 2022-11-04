@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import Dropdown from './dropdown'
 import styles from './styles.module.css'
-import { useState } from 'react'
+import { useState, useEffect, useRef } from 'react'
 
 type Props = {
     label: string,
@@ -16,14 +16,44 @@ type Props = {
 
 export default function MenuItems({ label, slug, submenu, submenuItems, depthLevel}: Props) {
     const [dropdown, setDropdown] = useState(false);
+    let ref = useRef<any>();
 
     const handleClick = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
         e.stopPropagation();
         setDropdown(!dropdown)
     }
 
+    useEffect (() => {
+        const handler = (event) => {
+            if (dropdown && ref.current && !ref.current.contains(event.target)) {
+                setDropdown(false);
+            }
+        };
+
+        document.addEventListener("mousedown", handler);
+        document.addEventListener("touchstart", handler);
+
+        return () => {
+            document.removeEventListener("mousedown", handler);
+            document.removeEventListener("touchstart", handler);
+        };
+    }, [dropdown]);
+
+    const onMouseEnter = () => {
+        window.innerWidth > 960 && setDropdown(true);
+    }
+
+    const onMouseLeave = () => {
+        window.innerWidth > 960 && setDropdown(false);
+    }
+
     return (
-            <li className={styles.menuItem}>
+            <li 
+                className={styles.menuItem}
+                ref={ref}
+                onMouseEnter={onMouseEnter}
+                onMouseLeave={onMouseLeave}
+            >
                 {submenu ? (
                     <>
                         <div 
