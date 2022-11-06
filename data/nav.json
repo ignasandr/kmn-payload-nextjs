@@ -20,12 +20,12 @@
       "submenu": true,
       "submenuItems": [
         {
-          "label": "Vydomos veiklos",
+          "label": "Vykdomos veiklos",
           "slug": "vykdomos",
           "submenu": true,
           "submenuItems": [
             {
-              "label": "Vydoma1",
+              "label": "Vykdoma1",
               "slug": "vykdoma1",
               "id": "636372377397e049df4a778f"
             },

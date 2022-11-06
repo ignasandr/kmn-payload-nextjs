@@ -1,3 +1,5 @@
+'use client';
+
 import Link from 'next/link'
 import Dropdown from './dropdown'
 import styles from './styles.module.css'
@@ -40,11 +42,11 @@ export default function MenuItems({ label, slug, submenu, submenuItems, depthLev
     }, [dropdown]);
 
     const onMouseEnter = () => {
-        window.innerWidth > 960 && setDropdown(true);
+        window.innerWidth > 980 && setDropdown(true);
     }
 
     const onMouseLeave = () => {
-        window.innerWidth > 960 && setDropdown(false);
+        window.innerWidth > 980 && setDropdown(false);
     }
 
     return (

@@ -1,3 +1,5 @@
+import Accessibility from './accessibility'
+import Burger from './burger'
 import MenuItems from './menuItems'
 import styles from './styles.module.css'
 
@@ -16,7 +18,7 @@ export default function Navbar({ menuItems }: Props) {
 
     return (
         <>
-            <nav>
+            <nav className={styles.nav}>
                 <ul className={styles.menu}>
                     { menuItems.map((item, index) => {
                         return (
@@ -25,11 +27,8 @@ export default function Navbar({ menuItems }: Props) {
                     })}
                 </ul>
             </nav>
-            <ul className={styles.accessibility}>
-                <li>Vienas</li> 
-                <li>Du</li> 
-                <li>Trys</li> 
-            </ul>
+            <Burger />
+            <Accessibility />
         </>
     )
 }

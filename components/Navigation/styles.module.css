@@ -8,13 +8,6 @@
     /* box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.07), 0 1px 2px 0 rgba(0, 0, 0, 0.05); */
 }
 
-.accessibility {
-    display: flex;
-    flex-direction: row;
-    list-style-type: none;
-    margin: 0;
-    padding: 0; 
-}
 
 .menu {
     list-style-type: none;
@@ -34,7 +27,7 @@
     width: 100%;
 
     font-weight: 600;
-    font-size: 16px;
+    font-size: 1rem;
     text-transform: uppercase;
     white-space: nowrap;
 
@@ -74,8 +67,8 @@
 .menuItem > a {
     padding: 10px 14px;
     display: inline-block;
-    text-decoration: none;
-    color: var(--color-darkblue);
+    /* text-decoration: none;
+    color: var(--color-darkblue); */
 }
 
 .menuItem > a:hover {
@@ -88,7 +81,7 @@
 
 
 .dropdown {
-    top: 41px;
+    top: 100%;
     left: 0;
     display: none;
     flex-direction: column;
@@ -111,4 +104,76 @@
 
 .show {
     display: flex;
+}
+
+.accessibility {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    list-style-type: none;
+    align-items: center;
+    margin: 0;
+    padding: 0; 
+    gap: 11px;
+}
+
+.accessibility a {
+    font-weight: 600;
+}
+
+.burger {
+    display: none;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: space-around;
+    flex-flow: column nowrap;
+    cursor: pointer;
+}
+
+.burgerLine {
+    display: none;
+    width: 2rem; 
+    height: 0.2rem;
+    background-color: var(--color-darkblue);
+    border-radius: 10px;
+    transform-origin: 1px;
+
+    transition: all 0.2s ease-in;
+}
+
+
+
+.burgerLine:nth-child(1) {
+    transform: rotate(0);
+}
+.burgerLine:nth-child(2) {
+    opacity: 1;
+}
+.burgerLine:nth-child(3) {
+    transform: rotate(0);
+}
+
+.open:nth-child(1) {
+    transform: rotate(45deg) translate(3px, -3px);
+}
+.open:nth-child(2) {
+    opacity: 0;
+}
+.open:nth-child(3) {
+    transform: rotate(-45deg) translate(3px, 3px);
+}
+
+@media only screen and (max-width: 980px) {
+    .nav {
+        display: none;
+    }
+
+    .burger {
+        display: flex;
+    }
+    
+    .burgerLine {
+        display: block;
+    }
 }

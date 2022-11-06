@@ -11,10 +11,19 @@
 }
 
 body {
-    font-family: "Poppins", sans-serif, 'font-weight: 100, 200, 300, 400, 500, 600';
+    font-family: "Inter", sans-serif;
     padding: 0;
     margin: 0;
     color: var(--color-darkblue);
     font-size: var(--font-size-base);
-    font-weight: 100, 200, 300, 400, 500, 600;
+}
+
+h1 {
+    font-weight: 500;
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+    color: var(--color-darkblue);
 }

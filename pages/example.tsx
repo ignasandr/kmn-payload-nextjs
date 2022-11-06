@@ -1,6 +1,5 @@
 import { GetStaticProps, InferGetStaticPropsType } from "next";
 import payload from 'payload';
-import Layout from "../components/layout";
 
 interface Example {
     id: string,

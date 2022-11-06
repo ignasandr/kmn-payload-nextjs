@@ -1,6 +1,8 @@
 import Head from "next/head";
 import React, { ReactNode } from "react";
 import Header from "./Navigation/header";
+import menu from "../data/nav.json"
+import styles from './styles.module.css'
 
 type Props = {
     children?: ReactNode,
@@ -14,8 +16,12 @@ export default function Layout ({ children, title = "Kauno Menininkų Namai"}: P
                 <link rel="icon" href="/favicon.ico" />
                 <meta property="og:title" content={title} key="title" />
             </Head>
-            <Header />
-            {children}
+            <Header menuItems={menu.menuItems}/>
+            <div className={styles.grid}>
+                <div className={styles.container}>
+                    {children}
+                </div>
+            </div>
         </React.Fragment>
     )
 }

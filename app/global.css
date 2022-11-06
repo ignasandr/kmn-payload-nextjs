@@ -11,9 +11,14 @@
 }
 
 body {
+    font-family: "Inter", sans-serif;
     padding: 0;
     margin: 0;
     color: var(--color-darkblue);
     font-size: var(--font-size-base);
-    font-weight: 400;
+}
+
+a {
+    text-decoration: none;
+    color: var(--color-darkblue);
 }
