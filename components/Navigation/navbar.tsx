@@ -1,5 +1,3 @@
-import Accessibility from './accessibility'
-import Burger from './burger'
 import MenuItems from './menuItems'
 import styles from './styles.module.css'
 
@@ -27,8 +25,6 @@ export default function Navbar({ menuItems }: Props) {
                     })}
                 </ul>
             </nav>
-            <Burger />
-            <Accessibility />
         </>
     )
 }
