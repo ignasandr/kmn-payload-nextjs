@@ -37,8 +37,6 @@
 
 .menuItem > .button {
     padding: 10px 14px;
-    /* display: flex;
-    align-items: flex-start; */
     color: var(--color-darkblue);
     font-size: inherit;
     text-transform: inherit;
@@ -46,8 +44,6 @@
     border: none;
     background-color: transparent;
     cursor: pointer;
-    /* display: inline-block;
-    width: auto; */
 }
 
 .menuItem > .button > span {
@@ -67,8 +63,6 @@
 .menuItem > a {
     padding: 10px 14px;
     display: inline-block;
-    /* text-decoration: none;
-    color: var(--color-darkblue); */
 }
 
 .menuItem > a:hover {
@@ -125,7 +119,6 @@
     display: none;
     width: 30px;
     height: 30px;
-    display: flex;
     justify-content: space-around;
     flex-flow: column nowrap;
     cursor: pointer;
