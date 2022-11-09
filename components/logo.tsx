@@ -13,7 +13,7 @@ export default function Logo({ width = 109, height = 40, onClick }: Props) {
     return (
         <Link href="/" onClick={onClick} className={styles.logo}>
                 <Image 
-                    src="/KMNlogo.svg"
+                    src="/kmn-logo.svg"
                     alt="logo"
                     width={width}
                     height={height}

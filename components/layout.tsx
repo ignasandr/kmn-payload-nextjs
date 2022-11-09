@@ -1,6 +1,6 @@
 import Head from "next/head";
 import React, { ReactNode } from "react";
-import Header from "./Navigation/header";
+import Header from "./Nav/header";
 import menu from "../data/nav.json"
 import styles from './styles.module.css'
 

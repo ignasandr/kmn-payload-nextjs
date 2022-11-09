@@ -7,8 +7,7 @@
 
 .container {
     grid-column: 3 / 11;
-    display: flex;
-    justify-content: center;
+    margin: auto;
 }
 
 @media only screen and (max-width: 980px) {
@@ -18,9 +17,21 @@
 
     .container {
         grid-column: 1 / 13;
+        margin: 0;
     }
 
     .logo {
         margin-left: 40px;
     }
 }
+/* 
+@media only screen and (min-width: 1590px) {
+    .grid {
+        margin: 0 20px;
+    }
+
+    .container {
+        grid-column: 1 / 13;
+        margin: auto;
+    }
+} */

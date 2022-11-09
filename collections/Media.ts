@@ -34,8 +34,8 @@ const Media: CollectionConfig = {
       },
       {
         name: 'feature',
-        width: 1024,
-        height: 576,
+        width: 1680,
+        height: 820,
       },
     ],
   },
