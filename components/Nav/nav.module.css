@@ -82,7 +82,7 @@
     display: none;
     flex-direction: column;
     align-items: flex-start;
-    background-color: var(--color-white);
+
 
     position: absolute;
     list-style-type: none;

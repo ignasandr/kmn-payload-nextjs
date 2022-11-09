@@ -13,11 +13,11 @@ export default function Examples({ examples }: InferGetStaticPropsType<typeof ge
         <>
             {examples.docs.map((example:Example) => {
                 return (
-                    <p key={example.id}>
+                    <div key={example.id}>
                         <h2>{example.thisIsAField}</h2> 
                         <p>{example.createdAt}</p>
                         <p>{example.updatedAt}</p>
-                    </p>
+                    </div>
                 )
             })}
         </>

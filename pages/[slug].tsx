@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import payload from 'payload';
-import { GetStaticProps, InferGetStaticPropsType } from "next";
+import { GetStaticProps, InferGetStaticPropsType, GetStaticPaths } from "next";
 import styles from './index.module.css';
 
 export default function Page({ page }: InferGetStaticPropsType<typeof getStaticProps>) {
@@ -17,12 +17,14 @@ export default function Page({ page }: InferGetStaticPropsType<typeof getStaticP
     )
 }
 
-export const getStaticProps: GetStaticProps = async () => {
+export const getStaticProps: GetStaticProps = async (ctx) => {
+    const slug = ctx.params?.slug;
+
     const pageQuery = await payload.find({
         collection: 'pages',
         where: {
             slug: {
-                equals: 'infocentras',
+                equals: slug,
             },
         },
     });
@@ -34,11 +36,24 @@ export const getStaticProps: GetStaticProps = async () => {
     }
 }
 
-export async function getStaticPaths() {
+export const getStaticPaths = async () => {
+    const pagesQuery = await fetch("http://localhost:3000/api/pages");
+    const pages = await pagesQuery.json();
+
+    // const pagesQuery = await payload.find({
+    //     collection: 'pages',
+    // });
+
+    const paths = pages.docs.map((page) => ({
+        params: { slug: page.slug },
+    }));
+
+    
     return {
-        paths: [
-            { params: { slug: 'infocentras' } },
-        ],
-        fallback: false
+        paths: paths,
+        // paths: [
+        //     { params: { slug: 'infocentras' } },
+        // ],
+        fallback: true
     }
 }
